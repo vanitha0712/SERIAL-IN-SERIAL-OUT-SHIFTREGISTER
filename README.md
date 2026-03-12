@@ -34,9 +34,25 @@ Each D flip-flop in the circuit has a Data (D) input, a Clock (CLK) input, and a
 Developed by: RegisterNumber:
 
 */
+module exp_5(clk, sin, q);
+input clk;
+input sin;
+output [3:0] q;
+reg [3:0] q;
+always @(posedge clk)
+begin
+q[0] <= sin;
+q[1] <= q[0];
+q[2] <= q[1];
+q[3] <= q[2];
+end
+endmodule
 
 **RTL LOGIC FOR SISO Shift Register**
+<img width="1581" height="845" alt="Screenshot 2026-03-12 111521" src="https://github.com/user-attachments/assets/b913f4b8-4e15-4099-9309-0e36750c6220" />
 
 **TIMING DIGRAMS FOR SISO Shift Register**
+<img width="1593" height="850" alt="Screenshot 2026-03-12 111551" src="https://github.com/user-attachments/assets/c4f9f219-0027-4de1-9d0d-8571795e9205" />
 
 **RESULTS**
+Thus the serial in and serial out shift register executed successfully.
